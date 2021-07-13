@@ -1,4 +1,4 @@
-﻿using Entities;
+﻿using Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +8,11 @@ namespace TestGeneral
 {
     public class CalificacionTest
     {
+        /// <summary>
+        /// Prueba unitaria para validar logica de calificacion final
+        /// </summary>
+        /// <param name="entrada"></param>
+        /// <param name="valEsp"></param>
         [Theory]
         [InlineData(73, 75)]
         [InlineData(67, 67)]

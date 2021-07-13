@@ -15,7 +15,11 @@ CREATE TABLE Estudiantes
 	Nombre VARCHAR(200),
 	ApellidoPaterno VARCHAR(200),
 	ApellidoMaterno VARCHAR(200),
-	IdCalificaciones INT FOREIGN KEY  REFERENCES Calificaciones(id)
+	IdCalificaciones INT,
+	CONSTRAINT Fk_Calificaciones
+    FOREIGN KEY (IdCalificaciones)
+    REFERENCES Calificaciones(id)
+    ON DELETE CASCADE
 )
 GO
 CREATE PROCEDURE SP_INSERT_ESTUDIANTES
@@ -49,7 +53,7 @@ BEGIN
 	SELECT s.Nombre,s.ApellidoPaterno,s.ApellidoMaterno,c.CalificacionOriginal,c.CalificacionFinal 
 	FROM Estudiantes s 
 	INNER JOIN Calificaciones c
-	on s.Id = c.Id
+	on s.IdCalificaciones = c.Id
 END
 GO
 

@@ -1,7 +1,7 @@
 ﻿using Business;
-using Entities;
 using Microsoft.Extensions.Configuration;
 using Repository;
+using Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,12 +25,12 @@ namespace ConsoleApp
             est.ActualizaCalificacionFinal(resl);
             
             est.Insert(resl).Wait();
-            var all = est.GetAll().Result as List<Estudiante>;
-            all.ForEach(p =>
-            {
-                Console.WriteLine("alumno: " + p.Nombre);
+            //var all = est.GetAll().Result as List<Estudiante>;
+            //all.ForEach(p =>
+            //{
+            //    Console.WriteLine("alumno: " + p.Nombre);
 
-            });
+            //});
 
             //var res = repo.GetAll().Result as List<Estudiante>;
             //Console.WriteLine(res[0].Nombre + " " + res[0].CalificacionOriginal);
