@@ -19,7 +19,6 @@ CREATE TABLE Estudiantes
 	CONSTRAINT Fk_Calificaciones
     FOREIGN KEY (IdCalificaciones)
     REFERENCES Calificaciones(id)
-    ON DELETE CASCADE
 )
 GO
 CREATE PROCEDURE SP_INSERT_ESTUDIANTES

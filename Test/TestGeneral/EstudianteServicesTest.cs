@@ -19,7 +19,7 @@ namespace TestGeneral
         public async void CreacionEstudiante()
         {
             EstudianteResponse list = new EstudianteResponse();
-            Estudiante nuevoEst = EstudianteCommon.CreaEstudiante("servTest","ServT2","Servt3",84);
+            Estudiante nuevoEst = EstudianteCommon.CreaEstudiante("lasTest","lastTest2","testo3",61);
             using (HttpClient client = new HttpClient())
             {
                 //se serializa el estudiante nuevo
