@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Src\Shared\Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Src\Estudiantes\DAL\Repository\Repository.csproj", "{D2A09A52-F562-45A3-8FB8-873539CA6284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "Apps\ConsoleApp\ConsoleApp.csproj", "{791CE4D8-3AB3-4F23-8E69-ADE67F162F66}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Src\Estudiantes\BLL\Business\Business.csproj", "{A07A2807-CCA6-444A-9731-4E8AADD1833F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGeneral", "Test\TestGeneral\TestGeneral.csproj", "{D2044BA0-B2AD-4002-A0FF-9D4BC786336B}"
