@@ -1,21 +1,29 @@
-﻿using Entities;
+﻿using Shared.Entities;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository
 {
+    /// <summary>
+    /// Clase que define las operaciones a realizar a la BD
+    /// </summary>
     public class EstudianteRepository : IRepository
     {
+        //cadena de conexion de la BD
         private readonly string _connectionString;
         public EstudianteRepository(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("defaultConnection");
         }
 
+        /// <summary>
+        /// Metodo Insert para guardar un nuevo estudiante
+        /// </summary>
+        /// <param name="estudianteNuevo"></param>
+        /// <returns></returns>
         public async Task<EstudianteResponse> Insert(Estudiante estudianteNuevo)
         {
             EstudianteResponse response = new EstudianteResponse();
@@ -33,20 +41,24 @@ namespace Repository
                         cmd.Parameters.Add(new SqlParameter("@CalifFinal", estudianteNuevo.RetrieveCalificacionFinal()));
                         await sql.OpenAsync();
                         await cmd.ExecuteNonQueryAsync();
-                        response.Succes = true;
+                        response.IsSuccess = true;
                         response.Description = "Agregado correctamente";
                     }
                     catch (Exception ex)
                     {
-                        response.Succes = false;
+                        response.IsSuccess = false;
                         response.Description = ex.Message;
-                        response.ListError.Add(ex);
+                        response.ErrorList.Add(ex);
                     }
                     return response;
                 }
             }
         }
 
+        /// <summary>
+        /// Metodo para obtener la lista de todos los estudiantes almacenados en la BD
+        /// </summary>
+        /// <returns></returns>
         public async Task<EstudianteResponse> GetAll()
         {
             EstudianteResponse response = new EstudianteResponse();
@@ -66,13 +78,17 @@ namespace Repository
                         }
                     }
                     response.Estudiantes = estudiantes;
-                    response.Succes = true;
+                    response.IsSuccess = true;
                     
                     return response;
                 }
             }
         }
 
+        /// <summary>
+        /// Metodo usado para saber la cantidad de estudiantes almacenados en la BD
+        /// </summary>
+        /// <returns></returns>
         public async Task<int> GetCountEstudiantes()
         {
             using (SqlConnection sql = new SqlConnection(_connectionString))
@@ -96,6 +112,11 @@ namespace Repository
             }
         }
 
+        /// <summary>
+        /// Metodo usado para obtener la informacion del objeto SqlDataReader y convertirla a un nuevo objeto estudiante 
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         private Estudiante MapToValue(SqlDataReader reader)
         {
 

@@ -5,11 +5,19 @@ using System.Threading.Tasks;
 
 namespace FrontApp
 {
+    /// <summary>
+    /// Enumeracion usada para definir el tipo de alertas que se usaran
+    /// </summary>
     public enum Alerts
     {
         Success,
-        Danger
+        Danger,
+        Warning
     }
+
+    /// <summary>
+    /// Clase usada para crear el tipo de mensaje de alerta que se mostrara en la vista al crear un nuevo estudiante.
+    /// </summary>
     public class CommonServices
     {
         public static string ShowAlert(Alerts obj, string message)
@@ -23,7 +31,9 @@ namespace FrontApp
                 case Alerts.Danger:
                     alertDiv = "<div class='alert alert-danger alert-dismissible' id='alert'><button type='button' class='close' data-dismiss='alert'>×</button><strong> Error!</ strong > " + message + "</a>.</div>";
                     break;
-                
+                case Alerts.Warning:
+                    alertDiv = "<div class='alert alert-warning alert-dismissable' id='alert'><button type='button' class='close' data-dismiss='alert'>×</button><strong> Warning!</strong> " + message + "</a>.</div>";
+                    break;
             }
             return alertDiv;
         }

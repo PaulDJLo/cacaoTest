@@ -1,12 +1,12 @@
-﻿using Entities;
-using Repository;
+﻿using Shared.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business
 {
+    /// <summary>
+    /// Clase que define la logica de negocios del estudiante
+    /// </summary>
     public class EstudianteBusiness
     {
         private readonly IRepository _repository;
@@ -30,7 +30,7 @@ namespace Business
             }
             else
             {
-                estRespo.Succes = false;
+                estRespo.IsSuccess = false;
                 estRespo.Description = "No se pueden inscribir mas alumnos, capacidad maxima 60 alumnos ";
                 return estRespo;
             }

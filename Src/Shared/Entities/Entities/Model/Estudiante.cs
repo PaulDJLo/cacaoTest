@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities
+namespace Shared.Entities
 {
+    /// <summary>
+    /// Clase que modela los datos del estudiante
+    /// </summary>
     public class Estudiante
     {
         public int Id { get; set; }
@@ -35,10 +38,20 @@ namespace Entities
         {
             Calificaciones.ActualizaCalificacionFinal();
         }
+
+        /// <summary>
+        /// Metodo que devuelve la calificacion original
+        /// </summary>
+        /// <returns></returns>
         public int RetrieveCalificacionOriginal()
         {
             return Calificaciones.CalificacionOriginal;
         }
+
+        /// <summary>
+        /// Metodo que devuelve la calificacion Final
+        /// </summary>
+        /// <returns></returns>
         public int RetrieveCalificacionFinal()
         {
             return Calificaciones.CalificacionFinal;
@@ -54,8 +67,6 @@ namespace Entities
             name.AppendFormat("{0} {1} {2}", Nombre, ApellidoPaterno, ApellidoMaterno);
             return name.ToString();
         }
-
-
 
     }
 }

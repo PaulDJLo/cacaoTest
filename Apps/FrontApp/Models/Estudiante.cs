@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FrontApp.Models
 {
+    /// <summary>
+    /// Modelo Estudiante, usado para validaciones de los datos en la vista 
+    /// </summary>
     public class Estudiante
     {
         [Required(ErrorMessage ="el campo {0} es obligatorio")]

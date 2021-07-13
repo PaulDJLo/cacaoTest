@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities
+namespace Shared.Entities
 {
+    /// <summary>
+    /// Clase que modela las calificaciones de los estudiantes.
+    /// </summary>
     public class Calificaciones
     {
 

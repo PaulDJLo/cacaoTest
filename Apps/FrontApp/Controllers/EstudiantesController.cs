@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Entities;
+using Shared.Entities;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
@@ -27,18 +23,28 @@ namespace FrontApp.Controllers
         }
 
         // GET: Estudiantes/Details
+        /// <summary>
+        /// Action Details para mostrar lista de Estudiantes
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Details()
         {
             EstudianteResponse list = new EstudianteResponse();
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var responseTask = await client.GetAsync(apiBaseUrl);
-                if (responseTask.IsSuccessStatusCode)
+                using (HttpClient client = new HttpClient())
                 {
-                    list = await HttpContentExtensions.ReadAsAsync<EstudianteResponse>(responseTask.Content);
+                    var responseTask = await client.GetAsync(apiBaseUrl);
+                    if (responseTask.IsSuccessStatusCode)
+                    {
+                        list = await HttpContentExtensions.ReadAsAsync<EstudianteResponse>(responseTask.Content);
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                list.ErrorList.Add(ex);
+            }
             return View(list.Estudiantes);
         }
 
@@ -49,34 +55,67 @@ namespace FrontApp.Controllers
         }
 
         // POST: Estudiantes/Create
+        /// <summary>
+        /// Action Create para crear un nuevo estudiante
+        /// </summary>
+        /// <param name="newEstudiante"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( [Bind("Nombre,ApellidoPaterno,ApellidoMaterno,Calificacion")]Models.Estudiante newEstudiante)
+        public async Task<IActionResult> Create([Bind("Nombre,ApellidoPaterno,ApellidoMaterno,Calificacion")] Models.Estudiante newEstudiante)
         {
             if (ModelState.IsValid)
             {
-                
+                //objeto EstudianteResponse donde se guardara el resultado de la operacion post.
+                EstudianteResponse list = new EstudianteResponse();
+                //conversion del objeto estudiante del modelo al objeto Entities.Estudiante
                 Estudiante nuevoEst = new Estudiante(newEstudiante.Nombre, newEstudiante.ApellidoPaterno, newEstudiante.ApellidoMaterno, newEstudiante.Calificacion);
-                using (HttpClient client = new HttpClient())
+                try
                 {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(nuevoEst), Encoding.UTF8, "application/json");
-                    string endpoint = apiBaseUrl;
-                    using (var response = await client.PostAsync(endpoint, content))
+                    using (HttpClient client = new HttpClient())
                     {
-                        if (response.IsSuccessStatusCode)
+                        //se serializa el estudiante nuevo
+                        StringContent content = new StringContent(JsonConvert.SerializeObject(nuevoEst), Encoding.UTF8, "application/json");
+                        string endpoint = apiBaseUrl;
+                        using (var response = await client.PostAsync(endpoint, content))
                         {
-                            ViewBag.Alert = CommonServices.ShowAlert(Alerts.Success, "Estudiante Agregado Correctamente");
-                        }
-                        else
-                        {
-                            ViewBag.Alert = CommonServices.ShowAlert(Alerts.Danger, "Error al guardar el estudiante, intentalo de nuevo");
+                            //se obtiene el resultado del post
+                            list = await HttpContentExtensions.ReadAsAsync<EstudianteResponse>(response.Content);
+                            if (list.IsSuccess)
+                            {
+                                //Se ha creado correctamente el estudiante
+                                ViewBag.Alert = CommonServices.ShowAlert(Alerts.Success, list.Description);
+                            }
+                            else
+                            {
+                                //Se valida si existen excepciones 
+                                if (list.ErrorList.Count > 0)
+                                {
+                                    //al existir excepciones se muestra el mensaje de la exception 
+                                    ViewBag.Alert = CommonServices.ShowAlert(Alerts.Danger, list.Description);
+
+                                }
+                                else
+                                {
+                                    //al no existir excepciones lo que existe es la validacion de capacidad maxima de alumnos 60
+                                    ViewBag.Alert = CommonServices.ShowAlert(Alerts.Warning, list.Description);
+                                }
+                            }
+
                         }
                     }
                 }
-                return PartialView("Create");
+                catch (Exception ex)
+                {
+                    ViewBag.Alert = CommonServices.ShowAlert(Alerts.Danger, ex.Message);
+                }
             }
-            return View(newEstudiante);
-        }
+            else
+            {
+                ViewBag.Alert = CommonServices.ShowAlert(Alerts.Danger, "Model State invalido");
 
+            }
+            return PartialView("Create");
+        }
     }
 }

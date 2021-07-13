@@ -1,10 +1,7 @@
 ﻿using Business;
-using Entities;
+using Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace EstudianteServices.Controllers
