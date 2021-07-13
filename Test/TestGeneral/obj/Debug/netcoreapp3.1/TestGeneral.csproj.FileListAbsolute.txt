@@ -116,3 +116,5 @@ C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGenera
 C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGeneral\bin\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGeneral\bin\Debug\netcoreapp3.1\Business.pdb
 C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGeneral\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGeneral\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Test\TestGeneral\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

@@ -1,4 +1,5 @@
-﻿using Shared.Entities;
+﻿using Newtonsoft.Json;
+using Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,20 +12,30 @@ namespace TestGeneral
     {
 
         /// <summary>
-        /// Prueba de creacion de un nuevo estudiante desde la capa BLL
+        /// Prueba de creacion de un nuevo estudiante desde los servicios Web 
         /// </summary>
         /// <returns></returns>
         [Fact]
         public async void CreacionEstudiante()
         {
-            //EstudianteBusiness est = new EstudianteBusiness(EstudianteCommon.CreaEstudianteRepository());
-
-            //EstudianteResponse result = await est.Insert(EstudianteCommon.CreaEstudiante("Ejemplo", "Ej", "dos", 85));
-            //Assert.True(result.IsSuccess);
+            EstudianteResponse list = new EstudianteResponse();
+            Estudiante nuevoEst = EstudianteCommon.CreaEstudiante("servTest","ServT2","Servt3",84);
+            using (HttpClient client = new HttpClient())
+            {
+                //se serializa el estudiante nuevo
+                StringContent content = new StringContent(JsonConvert.SerializeObject(nuevoEst), Encoding.UTF8, "application/json");
+                string endpoint = "https://localhost:44376/Estudiante";
+                using (var response = await client.PostAsync(endpoint, content))
+                {
+                    //se obtiene el resultado del post
+                    list = await HttpContentExtensions.ReadAsAsync<EstudianteResponse>(response.Content);
+                }
+            }
+            Assert.True(list.IsSuccess);
         }
 
         /// <summary>
-        /// Prueba para validar que obtenemos la lista de alumnos desde la capa BLL
+        /// Prueba para validar que obtenemos la lista de alumnos desde servicios Web 
         /// </summary>
         [Fact]
         public async void ObtencionListaEstudiantes()
