@@ -1,0 +1,13 @@
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\DAL\Repository\bin\Debug\netcoreapp3.1\appsettings.json

@@ -1,0 +1,32 @@
+﻿@model List<Entities.Estudiante>
+
+@{
+    ViewData["Title"] = "Lista de alumnos";
+}
+
+<h2>Lista de alumnos</h2>
+
+<div class="row">
+    <table class="arrowes-table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Calificacion Original</th>
+                <th>CalificacionFinal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ToString()</td>
+                    <td>@item.RetrieveCalificacionOriginal()</td>
+                    <td>@item.RetrieveCalificacionFinal()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Principal</a>
+</div>

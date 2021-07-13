@@ -1,0 +1,15 @@
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\Paul_\Documents\Examenes .NET\CacaoUniversity\CacaoTest\Src\Estudiantes\BLL\Business\obj\Debug\netcoreapp3.1\Business.pdb

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <ProjectReference Include="..\..\..\Shared\Entities\Entities\Entities.csproj" />
+    <ProjectReference Include="..\..\BLL\Business\Business.csproj" />
+    <ProjectReference Include="..\..\DAL\Repository\Repository.csproj" />
+  </ItemGroup>
+
+
+</Project>

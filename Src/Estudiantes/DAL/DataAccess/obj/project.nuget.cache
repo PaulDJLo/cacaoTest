@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3ysW4hW6fyTTvHYVmoan8yLsHKJjYaIA2MoqPFawGLgwQUZGB7j0ojhGa3VnQm/j85XHEdkqmvdkm+BjTdXlbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Paul_\\Documents\\Examenes .NET\\CacaoUniversity\\CacaoTest\\Src\\Estudiantes\\DAL\\DataAccess\\DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Paul_\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Paul_\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
